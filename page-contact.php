@@ -10,13 +10,39 @@
 </head>
 
 <body>
+  <?php
+  /*
+Template Name: お問い合わせ
+*/
+  ?>
+  <?php get_header(); ?>
+  <div class="single-eyecatch eyecatch page-eyecatch">
+    <?php echo get_the_post_thumbnail($post = 54); ?>
+    <?php // 投稿のスラッグを取得
+    $page = get_post(get_the_ID(53));
+    $slug = $page->post_name;
+    ?>
+    <div class="page-title">
+      <h1 class="page-title__h1"><?php echo $slug; ?></h1>
+      　　　　
+      <!-- 固定ページのタイトル -->
+      <p class=></p>
+    </div>
+  </div>
+  <div class="contact">
+    <form class="form" method="post">
+      
+      <?php echo do_shortcode('[contact-form-7 id="53" title="お問い合わせフォーム"]'); ?>
+    </form>
+  </div>
+  <?php get_footer(); ?>
   <footer id="footer">
     <div class="footer-nav__title">
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="article-logo">
-        <?php bloginfo('name'); ?>
+      <a href="" class="article-logo">
+        estra magazine
         <br />
         <span class="magazine-subtitle">
-          <?php bloginfo('description'); ?>
+          学習方法を提案するメディア
         </span>
       </a>
     </div>
@@ -30,23 +56,15 @@
         <h3>About</h3>
         <ul>
           <li>
-            <a href="<?php echo get_category_link(4); ?>">プログラミング</a><!-- 追加 -->
-          </li>
-          <li>
-            <a href="<?php echo get_category_link(4); ?>">インタビュー</a><!-- 追加 -->
-          </li>
-          <li>
-            <a href="<?php echo home_url(); ?>">お問い合わせ</a>
+            <a href="">お問い合わせ</a>
           </li>
           <li><a href="https://estra.jp">運営会社</a></li>
           <li><a href="https://coachtech.site">COACHTECH</a></li>
         </ul>
       </div>
     </div>
-    <small>Copyright <?php echo date('Y'); ?> <?php bloginfo('name'); ?> All Rights Reserved.</small>
+    <small>Copyright estra magazine 2020 All Rights Reserved.</small>
   </footer>
-  <?php wp_footer(); ?>
 </body>
-
 
 </html>

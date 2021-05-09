@@ -38,7 +38,7 @@ img {
 
 .flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: stretch;
   margin-bottom: 40px;
